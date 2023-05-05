@@ -1,0 +1,18 @@
+function fiboEvenSum(number) {
+  let currentNumber = 0;
+  let previousNumber = 0;
+  for (let i = 1; i < number; i++) {
+    console.log(getLastTwoDigitSum(i));
+  }
+}
+
+function getLastTwoDigitSum(n)
+{
+  if(n > 2){
+  return (n-1) + (n-2);
+  }
+  
+  return n;
+}
+
+fiboEvenSum(10);
