@@ -1,0 +1,12 @@
+function factorialize(num) {
+  let factorial = 1;
+  while (num > 0) {
+  //console.log(num);
+  factorial *= num;
+  num--;
+}
+  return factorial;
+  //console.log(factorial);
+}
+
+factorialize(5);
