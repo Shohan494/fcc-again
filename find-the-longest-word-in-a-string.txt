@@ -1,0 +1,50 @@
+function findLongestWordLength(str) {
+
+  let currentWordLength = 0;
+  let longestWordLength = 0;
+
+  for(let x = 0; x < str.length; x++)
+  {
+    console.log("Current Character : " + str[x])
+
+    if(str[x] != " ")
+    {
+      if(x == str.length - 1)
+      {
+        currentWordLength++
+        if(currentWordLength > longestWordLength)
+        {
+          longestWordLength = currentWordLength;
+          console.log("longest word length : " + longestWordLength)
+        }
+        
+        currentWordLength = 0;  
+      }
+      else
+      {
+        currentWordLength++
+      }
+    }
+    else
+    {
+       console.log("Space Found")
+       console.log("last word length : " + currentWordLength)
+
+      if(currentWordLength > longestWordLength)
+      {
+        longestWordLength = currentWordLength;
+        console.log("longest word length : " + longestWordLength)
+      }
+      
+      currentWordLength = 0;
+    } 
+  }
+  return longestWordLength;
+}
+
+findLongestWordLength("What if we try a super-long word such as otorhinolaryngology");
+
+// breaking down the problem
+// first separating the text with spaces and counting each word length
+// when loop faced space the length set to zero to determine the next word length
+// now we have to compare last word length with current word length and store the max value
