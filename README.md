@@ -44,7 +44,8 @@ for (let i = 0; i < str.length; i++) {
   }
 }
 
-// for last word section 
+// for last word section, this is the difference from my code
+// for this section I had to put an additonal if block inside main if block, check above section code
 
 if (currentLength > longestLength) {
   longestLength = currentLength;
