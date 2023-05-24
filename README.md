@@ -54,3 +54,4 @@ if (currentLength > longestLength) {
 return longestLength;
 }
 ```
+- in Return Largest Numbers in Arrays problem, when we had to find the max value inside an array, my basic idea was to comparing with 0 (which was set the initial max value) first with every array elements, but this worked for positive values, when negative values were there, had to set the max value array[x][0] and then we needed to compare
