@@ -1,0 +1,33 @@
+function confirmEnding(str, target) {
+  let stringLength = str.length;
+  let result = false;
+
+  console.log("string length " + stringLength);
+  console.log("target length " + target.length);
+
+  console.log("string minus target start char " + str[stringLength - target.length]);
+
+  for(let x = 0; x < target.length ; x++)
+  {
+    console.log(target[x]);
+    
+    if(str[stringLength - target.length + x] == target[x])
+    {
+      //console.log(str[stringLength - target.length + x]);
+      //console.log(target[x]);
+
+      //console.log(str[stringLength - target.length + x]);
+      console.log("matched");
+      result = true; 
+    }
+    else
+    {
+      return false;
+    }
+  }
+  return result;
+}
+
+confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification")
+
+// first get the target word splitted
