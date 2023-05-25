@@ -55,3 +55,4 @@ return longestLength;
 }
 ```
 - in Return Largest Numbers in Arrays problem, when we had to find the max value inside an array, my basic idea was to comparing with 0 (which was set the initial max value) first with every array elements, but this worked for positive values, when negative values were there, had to set the max value array[x][0] and then we needed to compare
+- the problem of ending matching can be done with regex but tried manually, concept is string index (string length - target length) and matching it with target index 0, if full matches return true, if one doesn't match return false.
