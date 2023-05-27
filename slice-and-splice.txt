@@ -1,0 +1,30 @@
+function frankenSplice(arr1, arr2, n) {
+  let resultArray = [...arr2];
+
+  for (let x = 0; x < arr1.length; x++) {
+    resultArray.splice(n, 0, arr1[x]);
+    n++;
+  }
+  return resultArray;
+  console.log(resultArray);
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+// so basically I am weak at js splice splice thing
+// but thinking process was okay
+
+// for this problem we need to use separete array
+// then as splice can replace or remove in terms of (index and how many elements will be replaced) parameter
+
+// using splice we needed to loop through the first array cause we have to add all the arr1 elements to a certain index number in arr2
+
+/*
+from doc
+
+Array.prototype.splice()
+
+The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+
+To create a new array with a segment removed and/or replaced without mutating the original array, use toSpliced(). To access part of an array without modifying it, see slice().
+*/
