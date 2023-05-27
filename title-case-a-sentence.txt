@@ -1,0 +1,24 @@
+function titleCase(str) {
+  let newString = str[0].toUpperCase();
+
+  for(let x = 1; x < str.length; x++)
+  {
+    if(str[x] == " ")
+    {
+      newString += " "
+      newString += str[x + 1].toUpperCase()
+      x++
+    }
+    else
+    {
+      newString += str[x].toLowerCase()
+    }
+  }
+  //console.log(newString);
+  return newString;
+}
+
+titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")
+
+// string's starting should be capitalized
+// after space the first char will be capitalize
