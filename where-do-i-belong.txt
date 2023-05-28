@@ -1,0 +1,35 @@
+function getIndexToIns(arr, num) {
+  arr.sort(function compareNumbers(a, b) {
+  console.log(a,b)
+  return a - b;
+}); // first compare the difference then sort, thats why comparer function is passed inside sort
+  
+  //console.log(arr);
+
+  let position = 0
+
+  for(position; position < arr.length; position++)
+  {
+    //console.log(position);
+    
+    if(num == arr[position])
+    {
+      return position;
+    }
+    else if(num < arr[position + 1])
+    {
+      return position + 1;
+    }
+  }
+
+  return position;
+}
+
+getIndexToIns([10, 20, 30, 40, 50], 35)
+
+/*
+The comparison function compareNumbers subtracts b from a and returns the result. This indicates that the array elements should be sorted in ascending order. If the result is negative, a comes before b in the sorted order. If the result is positive, b comes before a. If the result is zero, the elements are considered equal and their relative order doesn't change.
+
+order change is done by sort
+*/
+
