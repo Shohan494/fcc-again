@@ -1,0 +1,29 @@
+function mutation(arr) {
+  let count = 0;
+  for(let x = 0; x < arr[1].length; x++)
+  {
+      //console.log(arr[1][x]);
+      for(let y = 0; y < arr[0].length; y++)
+      {
+          if(arr[1][x].toLowerCase() === arr[0][y].toLowerCase())
+          {
+            console.log("match found and break");
+            console.log(arr[1][x] + " == " + arr[0][y]);
+            count++
+            break
+          }
+      }
+  }
+
+  console.log(count);
+
+  if(count == arr[1].length)
+  {
+    return true
+  }
+
+  return false
+
+}
+
+mutation(["Mary", "Aarmy"])
