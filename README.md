@@ -77,4 +77,5 @@ The splice() method changes the contents of an array by removing or replacing ex
 
 To create a new array with a segment removed and/or replaced without mutating the original array, use toSpliced(). To access part of an array without modifying it, see slice().
 */
-- ** using js problem solving sometime feels boring, because of advanced array methods like slice splice, no raw feel**
+- **using js problem solving sometime feels boring, because of advanced array methods like slice splice, no raw feel**
+- the last problem seems like same, it's kind of easier if we do solve this problem using slice but how does they work
