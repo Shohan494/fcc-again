@@ -1,0 +1,9 @@
+// Only change code below this line
+function urlSlug(title) {
+return title.split(/\W/).filter(words => words.trim()).map(words => (words.toLowerCase())).join("-");
+
+}
+// Only change code above this line
+urlSlug(" Winter Is  Coming")
+
+//return title.split(/\W/).map(words => (words.toLowerCase())).join("-");
