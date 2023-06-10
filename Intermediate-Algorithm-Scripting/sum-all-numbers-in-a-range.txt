@@ -1,0 +1,16 @@
+function sumAll(arr) {
+    let start = arr[0];
+    let end = arr[1];
+    
+    if (start > end) {
+        [start, end] = [end, start]; // Swap values
+    }
+    
+    let sum = 0;
+    
+    for (let i = start; i <= end; i++) {
+        sum += i;
+    }
+    
+    return sum;
+}
