@@ -1,0 +1,33 @@
+// function diffArray(arr1, arr2) {
+
+//   let bigArray = [...arr1]
+//   let smallArray = [...arr2]
+
+//   if(smallArray.length > bigArray.length)
+//   {
+//     [bigArray, smallArray] = [smallArray, bigArray]
+//   }
+
+//   const newArr1 = bigArray.filter(element => !smallArray.includes(element));
+
+//   const newArr2 = smallArray.filter(element => !bigArray.includes(element));
+
+//   //console.log(newArr1.concat(newArr2))
+
+//   return newArr1.concat(newArr2);
+// }
+
+// diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
+
+function diffArray(arr1, arr2) {
+
+  const newArr1 = arr1.filter(element => !arr2.includes(element));
+
+  const newArr2 = arr2.filter(element => !arr1.includes(element));
+
+  //console.log(newArr1.concat(newArr2))
+
+  return newArr1.concat(newArr2);
+}
+
+diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]);
