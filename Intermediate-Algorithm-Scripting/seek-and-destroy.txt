@@ -1,0 +1,18 @@
+function destroyer(arr) {
+  // Object.values(arguments) is new to me
+  const valsToRemove = Object.values(arguments).slice(1);
+  let resultArray = [];
+  for( let x = 0; x < arr.length; x++)
+  {
+    let result = ( valsToRemove.filter(element =>  arr[x] == element) )
+    //console.log(result.length)
+    if(result.length == 0)
+    {
+      resultArray.push(arr[x])
+    }
+  }
+  //console.log(resultArray)
+  return resultArray
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
