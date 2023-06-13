@@ -1,0 +1,35 @@
+function whatIsInAName(collection, source) {
+//collection.filter(element => console.log(element.last == source))
+//console.log(Object.keys(source).filter(element => element ))
+// collection.hasOwnProperty(element)
+
+/*
+let resultArray = []
+
+for(let i = 0; i < Object.keys(source).length; i++)
+{
+  //console.log(Object.keys(source)[i])
+  resultArray.push( (collection.filter(element => element.hasOwnProperty(Object.keys(source)[i]))) )
+}
+
+console.log(resultArray);
+
+}
+*/
+
+const sourceKeys = Object.keys(source);
+
+  // filter the collection
+  return collection.filter(object => {
+    for (let i = 0; i < sourceKeys.length; i++) {
+      if (object[sourceKeys[i]] !== source[sourceKeys[i]]) {
+        return false;
+      }
+    }
+    return true;
+  });
+}
+
+
+whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })
+
