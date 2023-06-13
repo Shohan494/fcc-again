@@ -5,3 +5,5 @@
 ## Seek And Destroy
 - Object.values(arguments) is new to me
 - const valsToRemove = Object.values(arguments).slice(1);
+## wherefore-art-thou
+- the thinking process was accurate but due to less used to in js code the problem got me, **need to practice more about return function js filter and inside filter function or any js function we can write inner code block and also return**
