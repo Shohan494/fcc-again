@@ -1,0 +1,54 @@
+// function spinalCase(str) {
+//   let mystring = str.toLowerCase();
+//   let result = "";
+//   for(let x = 0; x < mystring.length; x++)
+//   {
+//     result += mystring[x]
+//     if(mystring[x] == ' ' || mystring[x] == "_")
+//     {
+//       //console.log("space or - in index " + x)
+//       //console.log(result)
+//       //result = result.trimEnd()
+//       result = result.replace(/ |_/g, '') 
+//       result += '-'
+//       //console.log(result)
+//     } else if (x >= 65 && x <= 90)
+//     {
+
+//     }
+//     //console.log(result)
+//   }
+//   console.log(result)
+//   return result;
+// }
+
+function spinalCase(str) {
+  var newResult = '';
+
+  var result = str.replace(/ |_/g, '-')
+  console.log(result)
+
+  for(let i = 0; i < result.length; i++) {
+    if(/[A-Z]/.test(result[i]) && i !=0) {
+      newResult += "-" + result[i];
+    } else {
+      newResult += result[i]
+    }
+  }
+
+newResult = newResult.replace(/--|_/g, '-')
+
+
+
+//result = result.replace(/ |_/g, '-')
+//console.log(newResult)
+return newResult.toLowerCase();
+
+}
+
+spinalCase("AllThe-small Things")
+// output this-is-spinal-tap
+
+//input thisIsSpinalTap
+
+//this-is-spinal-tap.
