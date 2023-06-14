@@ -1,0 +1,27 @@
+function spinalCase(str) {
+  var resultString = '';
+  for(let i = 0; i < str.length; i++) {
+    // captal a to z check with regex, ignoring first string character, checking for already having space or not
+    if(i != 0 && /[A-Z]/.test(str[i]) && str[i-1] != " ") {
+      resultString += " " + str[i];
+    } else {
+      resultString += str[i];
+    }
+  }
+
+  resultString = resultString.replace(/_/g, "")
+  resultString = resultString.replace(/-/g, " ")
+
+  resultString = resultString.toLowerCase()
+  resultString = resultString.replace(/ /g, "-")
+
+  
+  return resultString
+  //console.log(resultString);
+}
+
+spinalCase("This Is Spinal Tap")
+spinalCase("thisIsSpinalTap")
+spinalCase("The_Andy_Griffith_Show")
+spinalCase("Teletubbies say Eh-oh")
+spinalCase("AllThe-small Things")
