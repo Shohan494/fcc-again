@@ -1,0 +1,29 @@
+function translatePigLatin(str) {
+
+const regEx =  /^[aeiou].*/i
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  if(vowels.includes(str[0]))
+  {
+    return str + "way"
+    console.log(str + "way");
+  }
+  else{
+    //return(str.substring(1) + str[0] + "ay");
+    for(let x = 0; x < str.length; x++)
+    if(vowels.includes(str[x]))
+    {
+      //return str.substring(0, i);
+      //console.log("Before Vowel Part : " + str.substring(0, x));
+      //console.log("Rest Part : " + str.substring(x, str.length));
+      return str.substring(x, str.length) + str.substring(0, x) + "ay";
+      console.log(str.substring(x, str.length) + str.substring(0, x) + "ay");
+    }
+    else if ( x == str.length - 1 && !vowels.includes(str[x])){
+      return str + "ay";
+      console.log(str + "ay");
+    }
+  }
+}
+
+translatePigLatin("rhythm")
