@@ -1,0 +1,17 @@
+function myReplace(str, before, after) {
+  //return str.replace(before, after)
+  const regEx =  /^[A-Z]/
+  if(before.match(regEx))
+  {
+    console.log("capital")
+    after = after[0].toUpperCase() + after.slice(1, after.length)
+  } else 
+  {
+    after = after[0].toLowerCase() + after.slice(1, after.length)
+  }
+  console.log(str.replace(before, after));
+  return str.replace(before, after);
+
+}
+
+myReplace("Let us go to the store", "store", "mall")
