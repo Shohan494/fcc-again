@@ -1,0 +1,19 @@
+function fearNotLetter(str) {
+  
+  let start = str.charCodeAt(0)
+  //console.log(start)
+  
+  for(let x = 0; x < str.length; x++)
+  {
+    //console.log(str.charCodeAt(x))
+    //console.log("and start value is: " + start)
+    if(str.charCodeAt(x) !== start)
+    {
+      //console.log(String.fromCharCode(start))
+      return String.fromCharCode(start)
+    }
+    start++
+  }
+}
+
+fearNotLetter("abce");
