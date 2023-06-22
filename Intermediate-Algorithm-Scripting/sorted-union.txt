@@ -1,0 +1,23 @@
+function uniteUnique(arr) {
+  let result = []
+for(var arg = 0; arg < arguments.length; arg++)
+{
+  //console.log(arguments[arg])
+    var arr = arguments[arg];
+    for(var i = 0; i < arr.length; ++ i)
+    {
+      // check if exists element
+      // also check if bigger or smaller then add it before or after
+      if(!result.includes(arr[i]))
+      {
+        result.push(arr[i]);
+      }
+    }
+
+}
+
+  return result
+  //console.log(result)
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
