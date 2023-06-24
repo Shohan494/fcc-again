@@ -1,0 +1,32 @@
+Sum All Odd Fibonacci Numbers
+
+function sumFibs(num) {
+  let array = [];
+
+  //let fibonacciArray = []
+
+  // console.log(array[0])
+  // console.log(array[1])
+
+  for(let x = 0; x < num; x++)
+  {
+    //console.log("Number: " + x)
+
+    if(x == 1 || x == 0)
+    {
+      console.log(x)
+      array.push(x)
+    }
+    else{
+      //console.log(array[x - 1])
+      array.push(array[x - 1] + array[x - 2])
+    }
+
+    //console.log( (x - 1) + (x - 2) )
+    //array.push((x - 1) + (x - 2))
+  }
+
+  console.log(array)
+}
+
+sumFibs(12);
