@@ -1,0 +1,58 @@
+function sumFibs(num) {
+  let array = [];
+  let sum = 0;
+
+  //let fibonacciArray = []
+
+  // console.log(array[0])
+  // console.log(array[1])
+
+  for(let x = 0; x <= num; x++)
+  {
+    //console.log("Number: " + x)
+
+    if(x == 1 || x == 0)
+    {
+      //console.log(x)
+      array.push(x)
+    }
+    else{
+      //console.log(x);
+      //console.log(array[x - 1] + array[x - 2])
+      if(array[x - 1] + array[x - 2] <= num)
+      {
+        array.push(array[x - 1] + array[x - 2])
+      }
+      //console.log(array[x - 1] + array[x - 2])
+
+
+      // if(array[x - 1] + array[x - 2] % 2 == 1)
+      // {
+      //   console.log(array[x - 1] + array[x - 2])
+      //   sum = sum + array[x - 1] + array[x - 2];
+      //   console.log("Sum " + sum)
+      // }
+
+    }
+
+    //console.log( (x - 1) + (x - 2) )
+    //array.push((x - 1) + (x - 2))
+  }
+
+  console.log(array)
+  //console.log(sum)
+
+  for(let x = 0; x < array.length; x++)
+  {
+      if(array[x] % 2 == 1)
+      {
+        sum = sum + array[x]
+        //console.log("Sum " + sum)
+      }   
+  }
+
+  //console.log("Sum " + sum)
+  return sum;
+}
+
+sumFibs(1000);
