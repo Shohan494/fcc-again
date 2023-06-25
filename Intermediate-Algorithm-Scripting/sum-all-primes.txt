@@ -1,0 +1,25 @@
+function sumPrimes(num) {
+  let sum = 0
+  for(let x = 2; x <= num; x++)
+  {
+    let isNumberPrime = true
+    for(let y = 2; y < x; y++)
+    {
+      if(x % y == 0)
+      {
+        isNumberPrime = false
+        break
+      }
+    }
+
+    if(isNumberPrime)
+    {
+      sum = sum + x
+    }
+  }
+
+  console.log(sum)
+  return sum
+}
+
+sumPrimes(10);
