@@ -1,0 +1,100 @@
+function smallestCommons(arr) {
+  let biggerNumber = arr[1]
+  let smallerNumber = arr[0]
+
+  if(arr[0] > arr[1])
+  {
+    biggerNumber = arr[0]
+    smallerNumber = arr[1]
+  }
+
+  let status = false
+  let multiple = biggerNumber
+
+while (!status)
+{
+  let foreachstatus = true
+  let y = biggerNumber - 1
+  //console.log("multiple: " + multiple);
+  for(y; y >= smallerNumber; y--)
+  {
+    //console.log("loop check: " + y);
+    
+    if(multiple % y !== 0)
+    {
+      foreachstatus = false
+      //console.log("Not Divisible, breaking " + y);
+      break;
+    }
+  }
+
+  if(foreachstatus)
+  {
+    status = true
+    break
+  }
+
+  multiple += biggerNumber
+  //console.log("multiple: " + multiple);
+}
+  return multiple
+  //console.log(multiple);
+}
+
+smallestCommons([1, 13]);
+/*
+
+
+function smallestCommons(arr) {
+
+let biggerNumber = arr[1]
+if(arr[0] > arr[1])
+{
+  biggerNumber = arr[0] 
+}
+
+let status = true
+
+do {
+  biggerNumber += biggerNumber
+  for(let y = biggerNumber - 1; y > 0; y--)
+  {
+    if(biggerNumber % y !== 0)
+    {
+      status = false
+      break;
+    }
+  }
+
+} while (status);
+
+console.log(biggerNumber);
+smallestCommons([1, 5])
+
+}
+
+/*
+for(let x = biggerNumber; x >= 1; x--)
+{
+  biggerMultipleNumber = biggerMultipleNumber + biggerNumber
+  console.log("biggerMultipleNumber is: " + biggerMultipleNumber)
+  
+  let status = true
+  for(let y = biggerNumber - 1; y > 0; y--)
+  {
+    if(biggerMultipleNumber % y !== 0)
+    {
+      status = false
+      break;
+    }
+  }
+  if(status)
+  {
+    console.log(biggerMultipleNumber)
+  }
+}
+
+//console.log(array)
+
+}
+*/
