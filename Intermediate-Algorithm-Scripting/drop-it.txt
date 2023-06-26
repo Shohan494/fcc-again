@@ -1,0 +1,19 @@
+function dropElements(arr, func) {
+  // drop them elements.
+  let originalLen = arr.length;
+  for (let i = 0; i < originalLen; i++) {
+    //console.log(i)
+    console.log(arr[0])
+    if (func(arr[0])) {
+      console.log("Breaking");
+      break;
+    } else {
+      arr.shift();
+      console.log(arr)
+    }
+  }
+  //console.log(arr)
+  return arr;
+}
+
+dropElements([1, 2, 3, 4], function(n) {return n > 5;})
