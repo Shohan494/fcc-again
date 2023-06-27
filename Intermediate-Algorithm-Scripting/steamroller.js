@@ -1,3 +1,37 @@
+function steamrollArray(array) {
+  let resultArray = [];
+  
+  for (let x = 0; x < array.length; x++) {
+    if (Array.isArray(array[x])) {
+      console.log("Array is : " + array[x])
+      
+      // Recursively flatten the nested array
+      const flattenedSubarray = steamrollArray(array[x]);
+      //THIS LINE ACTUALLY PUSHES THE LAST ELEMENT OF NESTED ARRAY 
+      console.log(`Flattened subarray: ${flattenedSubarray}`);
+      
+      
+      // Spread the flattened subarray into the resultArray
+      resultArray.push(...flattenedSubarray);
+    } else {
+      console.log(`Pusing element: ${array[x]}`);
+      
+      // Add non-array element to the resultArray
+      resultArray.push(array[x]);
+    }
+  }
+  
+  console.log(`Final resultArray: ${resultArray}`);
+  
+  return resultArray;
+}
+
+steamrollArray([1, [], [3, [[4]]]]);
+
+// ABOVE SOLUTION IS WHEN I UNDERSTOOD BETTER
+
+// BELOW SOLUTION IS WHEN I TRIED TO UNDERSTAD BETTER
+
 function steamrollArray(array)
 {
   let resultArray = []
