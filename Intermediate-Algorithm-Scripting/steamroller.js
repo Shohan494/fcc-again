@@ -3,13 +3,16 @@ function steamrollArray(array)
   let resultArray = []
   for(let x = 0; x < array.length; x++)
   {
+    console.log("Loop running " + x)
     if(Array.isArray(array[x]))
     // I used "array[x].length >= 1" first
      {
-      console.log(array[x]);
-      //console.log(...steamrollArray(array[x]))
+      console.log("Is Array");
+      console.log("Array Element " + array[x]);
+      console.log("Spread: ");
+      console.log(...steamrollArray(array[x]))
       resultArray.push(...steamrollArray(array[x]));
-      console.log(resultArray)
+      console.log("Result " + resultArray)
       // this line killed me
       // thinking flow was right later on after a few first trial
       // loop through array and check if every element is array or not
@@ -18,7 +21,7 @@ function steamrollArray(array)
     }
     else
     {
-      //console.log(array[x] + " Pushed")
+      console.log(array[x] + " Pushed")
       resultArray.push(array[x])
     }
   }
@@ -26,4 +29,4 @@ function steamrollArray(array)
   return resultArray;
   
 }
-steamrollArray([[["a"]], [["b"]]])
+steamrollArray([1, [], [3, [[4]]]])
