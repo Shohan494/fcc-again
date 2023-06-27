@@ -11,7 +11,7 @@ function steamrollArray(array)
       resultArray.push(...steamrollArray(array[x]));
       console.log(resultArray)
       // this line killed me
-      // thinking flow was right later on
+      // thinking flow was right later on after a few first trial
       // loop through array and check if every element is array or not
         // if not, then push to result array
       // if array then pass the inner array everytime, and at last "the last element" will be pushed to result array because of recursion function call
