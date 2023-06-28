@@ -3,19 +3,20 @@ function binaryAgent(str) {
   let smallString = "";
   for(let x = 0; x < str.length; x++)
   {
-    
     if(str[x] == " ")
     {
       //console.log(smallString)
+      
       let convertedBinaryToDecimal = 0
       let z = 0
       for(let y = smallString.length - 1; y >= 0; y--)
       {
         convertedBinaryToDecimal += ( Number(smallString[y]) * Math.pow(2, z) )
         z++
-        console.log(convertedBinaryToDecimal)
+        //console.log(convertedBinaryToDecimal)
+        //console.log(String.fromCharCode(convertedBinaryToDecimal));
       }
-
+      console.log(String.fromCharCode(convertedBinaryToDecimal));
       smallString = ""
     }
     else
