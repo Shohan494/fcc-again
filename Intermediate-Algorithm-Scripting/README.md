@@ -11,3 +11,6 @@
 - for this solution, I picked the largest number then incremented, then checked with all other numbers in range if divisible. if divisible by all other numbers, then that's the one number which is the smallest common multiple
 ## Steam Roller
 - **Recursion and Spread Operator in Javascript**
+
+## Arguments Optional
+- **how a function can call or return which expects another parameter?**
