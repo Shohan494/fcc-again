@@ -1,0 +1,35 @@
+function shift13(charCode)
+{
+  let shiftedCharCode
+  if(charCode > 77)
+  {
+    shiftedCharCode = (charCode - 78)+ 65
+  }
+  else
+  {
+    shiftedCharCode = charCode + 13
+  }
+  return shiftedCharCode;
+}
+
+function rot13(str) {
+  let outputString = "";
+  for(let x = 0; x < str.length; x++)
+  {
+    if(str[x] == " " || str[x] == "." || str[x] == "!" || str[x] == "?")
+    {
+      console.log(String.fromCharCode((str.charCodeAt([x]))))
+      outputString += String.fromCharCode((str.charCodeAt([x])))
+    }
+    else
+    {
+      //console.log(str.charCodeAt([x]))
+      console.log(String.fromCharCode(shift13(str.charCodeAt([x]))))
+      outputString += String.fromCharCode(shift13(str.charCodeAt([x])))
+    }
+  }
+  console.log(outputString)
+  return outputString
+}
+
+rot13("SERR PBQR PNZC");
