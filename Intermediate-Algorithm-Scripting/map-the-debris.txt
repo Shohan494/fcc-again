@@ -1,0 +1,27 @@
+function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+
+  let newArr = []
+
+
+
+
+  //console.log( [{name: arr[0].name, orbitalPeriod: orbitalPeriod}] )
+  
+
+  const getOrbPeriod = function(obj) {
+  let earth = earthRadius + obj.avgAlt
+  let orbitalPeriod = Math.round(2 * Math.PI * Math.sqrt(Math.pow(earth, 3)/GM));
+    // create new object
+    return {name: obj.name, orbitalPeriod: orbitalPeriod}
+  };
+
+  for (let elem in arr) {
+    newArr.push(getOrbPeriod(arr[elem]));
+  } 
+return newArr
+console.log(newArr)
+}
+
+orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])
