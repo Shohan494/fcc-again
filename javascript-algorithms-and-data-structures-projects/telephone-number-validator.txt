@@ -1,0 +1,19 @@
+function telephoneCheck(str) {
+  let regularExpression1 = /^(1\s?)?\d{3}([-\s]?)\d{3}\2\d{4}$/
+  let regularExpression2 = /^(1\s?)?\(\d{3}\)\s?\d{3}[-\s]?\d{4}$/;
+
+      if (regularExpression1.test(str))
+      {
+          return true;
+      }
+      else if(regularExpression2.test(str))
+      {
+        return true
+      }
+      else
+      {
+        return false
+      }
+  }
+
+telephoneCheck("555-555-5555");
