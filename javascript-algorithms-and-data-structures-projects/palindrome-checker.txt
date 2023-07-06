@@ -1,0 +1,29 @@
+function palindrome(str) {
+  str = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()
+  console.log(str)
+
+  let reversedString = ''
+
+  for(let x = str.length - 1; x >= 0; x--)
+  {
+    console.log(str[x])
+    reversedString += str[x]
+  }
+
+  console.log(reversedString)
+
+  if(str == reversedString)
+  { 
+    console.log("true")
+    return true;
+  }
+  else
+  {
+    console.log("false")
+    return false;
+  }
+
+
+}
+
+palindrome("A man, a plan, a canal. Panama")
