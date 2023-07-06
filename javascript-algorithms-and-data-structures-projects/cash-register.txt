@@ -1,0 +1,74 @@
+function checkCashRegister(price, cash, cid) {
+const UNIT_AMOUNT = {
+  "PENNY": .01,
+  "NICKEL": .05,
+  "DIME": .10,
+  "QUARTER": .25,
+  "ONE": 1.00,
+  "FIVE": 5.00,
+  "TEN": 10.00,
+  "TWENTY": 20.00,
+  "ONE HUNDRED": 100.00
+}
+
+  let totalCashInDrawer = 0;
+  for (let element of cid) {
+    totalCashInDrawer += element[1];
+  }
+
+  totalCashInDrawer = totalCashInDrawer.toFixed(2);
+  let givemechange = cash - price;
+  console.log("Change: " + givemechange)
+  let changeArray = []
+
+  if (givemechange > totalCashInDrawer) {
+    console.log({ status: "INSUFFICIENT_FUNDS", change: changeArray })
+    return { status: "INSUFFICIENT_FUNDS", change: changeArray };
+  } else if (givemechange.toFixed(2) === totalCashInDrawer) {
+    console.log({ status: "CLOSED", change: cid })
+    return { status: "CLOSED", change: cid };
+  } else
+  {
+    cid = cid.reverse();
+    for (let elem of cid) {
+      // LOOPING THROUGH CASH IN DRAWER, HIGH TO LOW
+      // HIGH BECAUSE WE HAVE TO GIVE THE CHANGE AS RETURN
+      // SO THE CALCULATION IS USUALLY DONE FROM THE HIGHEST TO LOWEST
+
+      let temp = [elem[0], 0];
+      //console.log(temp)
+      // BELOW elem[1] MEANS THE AMOUNT IN CASH DRAWER
+      // THE BELOW SECTION IS WHILE SO ABOVE WE CAN SEE THAT WE...
+      // ARE ITERATING THROUGH EACH CASH IN DRAWER ITEM...
+      // AND CHECKING TILL WE ARE DONE USING THE SPECIFIC UNIT...
+      // UNTIL IT IS LESS THAN THE SPECIFIC UNIT
+
+      // FOR EXAMPLE IF THE SPECIFIC UNIT IS 20, AND THE CHANGE IS 70
+      // WE WILL GET 20 + 20 + 20, THREE TIMES
+      while (givemechange >= UNIT_AMOUNT[elem[0]] && elem[1] > 0)
+      {
+        //console.log("checking if " + UNIT_AMOUNT[elem[0]] + " is greater or equal with " + givemechange + " and " + elem[1] + " is greater than 0 or not")
+        temp[1] += UNIT_AMOUNT[elem[0]];
+        elem[1] -= UNIT_AMOUNT[elem[0]]; // from cash drawer - decreasing
+        //push to result array of change
+        //change should be decreasing
+        givemechange -= UNIT_AMOUNT[elem[0]];
+        givemechange = givemechange.toFixed(2);
+      }
+      // IF THE TEMP MEANS OUR RESULT VALUE INCREASES WE ARE PUSHING
+      if (temp[1] > 0) {
+        changeArray.push(temp);
+      }
+  }
+}
+// AFTER OUR CALCULATION IF STILL LEFT CHANGE AMOUNT, THEN  
+  if (givemechange > 0) {
+    console.log({ status: "INSUFFICIENT_FUNDS", change: [] })
+    return { status: "INSUFFICIENT_FUNDS", change: [] };
+  }
+  // OTHERWISE THE RESULT
+  console.log({ status: "OPEN", change: changeArray})
+  return { status: "OPEN", change: changeArray};
+}
+
+checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]])
