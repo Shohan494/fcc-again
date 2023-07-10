@@ -11,6 +11,9 @@ const array = [
 // general sort
 // array.sort()
 
+// below code is the demostration for each element of the array
+// it will be checked and sorted
+
 array.sort((a, b) => {
     if(a[1] > b[1])
     {
