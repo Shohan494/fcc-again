@@ -1,0 +1,185 @@
+x = 0
+Checking if the value of x === 3 or not
+
+loop 0 starts, starting value i = 0, loop will run till 2 ( charachters.length )
+swap called
+Swaping A with A
+Before Swap
+[ 'A', 'B', 'C' ]
+After Swap
+[ 'A', 'B', 'C' ]
+
+	recursion call with x + 1 means x value is now = 1
+	loop starts, starting value i = 1, loop will run till 2 ( charachters.length )
+	Swaping B with B
+	Before Swap
+	[ 'A', 'B', 'C' ]
+	After Swap
+	[ 'A', 'B', 'C' ]
+
+		recursion call with x + 1 + 1 means x value is now = 2
+		loop starts, starting value i = 2, loop will run till 2 ( charachters.length )
+		Swaping C with C
+		Before Swap
+		[ 'A', 'B', 'C' ]
+		After Swap
+		[ 'A', 'B', 'C' ]
+
+			recursion call with x + 1 + 1 + 1 means x value is now = 3
+			Permutation:
+			ABC
+			as x = 3 so it won't go inside loop
+
+		Backtrack to restore original order
+		Before Swap
+		[ 'A', 'B', 'C' ]
+		After Swap
+		[ 'A', 'B', 'C' ]
+
+	Backtrack to restore original order
+	Before Swap
+	[ 'A', 'B', 'C' ]
+	After Swap
+	[ 'A', 'B', 'C' ]
+
+	loop starts, starting value i = 2, loop will run till 2 ( charachters.length )
+	// x = 1, check line 12
+	Swaping B with C
+	Before Swap
+	[ 'A', 'B', 'C' ]
+	After Swap
+	[ 'A', 'C', 'B' ]
+
+		recursion call with x + 1 means x value is now = 2
+		loop starts, starting value i = 2, loop will run till 2 ( charachters.length )
+		Swaping B with B
+		Before Swap
+		[ 'A', 'C', 'B' ]
+		After Swap
+		[ 'A', 'C', 'B' ]
+
+			recursion call with x + 1 + 1 means x value is now = 3
+			Permutation:
+			ACB
+			as x = 3 so it won't go inside loop
+
+		Backtrack to restore original order
+		Before Swap
+		[ 'A', 'C', 'B' ]
+		After Swap
+		[ 'A', 'B', 'C' ]
+
+	Backtrack to restore original order
+	Before Swap
+	[ 'A', 'B', 'C' ]
+	After Swap
+	[ 'A', 'B', 'C' ]
+
+Swaping A with B
+Before Swap
+[ 'A', 'B', 'C' ]
+After Swap
+[ 'B', 'A', 'C' ]
+Swaping A with A
+Before Swap
+[ 'B', 'A', 'C' ]
+After Swap
+[ 'B', 'A', 'C' ]
+Swaping C with C
+Before Swap
+[ 'B', 'A', 'C' ]
+After Swap
+[ 'B', 'A', 'C' ]
+Permutation:
+BAC
+Backtrack to restore original order
+Before Swap
+[ 'B', 'A', 'C' ]
+After Swap
+[ 'B', 'A', 'C' ]
+Backtrack to restore original order
+Before Swap
+[ 'B', 'A', 'C' ]
+After Swap
+[ 'B', 'A', 'C' ]
+Swaping A with C
+Before Swap
+[ 'B', 'A', 'C' ]
+After Swap
+[ 'B', 'C', 'A' ]
+Swaping A with A
+Before Swap
+[ 'B', 'C', 'A' ]
+After Swap
+[ 'B', 'C', 'A' ]
+Permutation:
+BCA
+Backtrack to restore original order
+Before Swap
+[ 'B', 'C', 'A' ]
+After Swap
+[ 'B', 'C', 'A' ]
+Backtrack to restore original order
+Before Swap
+[ 'B', 'C', 'A' ]
+After Swap
+[ 'B', 'A', 'C' ]
+Backtrack to restore original order
+Before Swap
+[ 'B', 'A', 'C' ]
+After Swap
+[ 'A', 'B', 'C' ]
+Swaping A with C
+Before Swap
+[ 'A', 'B', 'C' ]
+After Swap
+[ 'C', 'B', 'A' ]
+Swaping B with B
+Before Swap
+[ 'C', 'B', 'A' ]
+After Swap
+[ 'C', 'B', 'A' ]
+Swaping A with A
+Before Swap
+[ 'C', 'B', 'A' ]
+After Swap
+[ 'C', 'B', 'A' ]
+Permutation:
+CBA
+Backtrack to restore original order
+Before Swap
+[ 'C', 'B', 'A' ]
+After Swap
+[ 'C', 'B', 'A' ]
+Backtrack to restore original order
+Before Swap
+[ 'C', 'B', 'A' ]
+After Swap
+[ 'C', 'B', 'A' ]
+Swaping B with A
+Before Swap
+[ 'C', 'B', 'A' ]
+After Swap
+[ 'C', 'A', 'B' ]
+Swaping B with B
+Before Swap
+[ 'C', 'A', 'B' ]
+After Swap
+[ 'C', 'A', 'B' ]
+Permutation:
+CAB
+Backtrack to restore original order
+Before Swap
+[ 'C', 'A', 'B' ]
+After Swap
+[ 'C', 'A', 'B' ]
+Backtrack to restore original order
+Before Swap
+[ 'C', 'A', 'B' ]
+After Swap
+[ 'C', 'B', 'A' ]
+Backtrack to restore original order
+Before Swap
+[ 'C', 'B', 'A' ]
+After Swap
+[ 'A', 'B', 'C' ]
