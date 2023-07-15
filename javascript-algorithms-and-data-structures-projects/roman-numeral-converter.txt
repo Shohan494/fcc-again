@@ -1,0 +1,53 @@
+
+
+function convertToRoman(decimalNumber) {
+
+function findHighestRomanSymbol(decimalNumber) {
+  for (let [value, symbol] of romanSymbols) {
+    console.log("checking match " + [value, symbol] + " with " + decimalNumber)
+    if (value <= decimalNumber) {
+      return [value, symbol];
+    }
+  }
+  
+  return null; // Return null if no matching symbol found
+}
+
+const romanSymbols = new Map([
+  [1000, 'M'],
+  [900, 'CM'],
+  [500, 'D'],
+  [400, 'CD'],
+  [100, 'C'],
+  [90, 'XC'],
+  [50, 'L'],
+  [40, 'XL'],
+  [10, 'X'],
+  [9, 'IX'],
+  [5, 'V'],
+  [4, 'IV'],
+  [3, 'III'],
+  [2, 'II'],
+  [1, 'I']
+]);
+
+
+let numberToConvert = decimalNumber
+let romanString = ''
+while(numberToConvert > 0)
+{
+  console.log("Number To Convert " + numberToConvert)
+  let highestSymbol = findHighestRomanSymbol(numberToConvert);
+  console.log("Nearest Below " + highestSymbol[0])
+  romanString += highestSymbol[1]
+  console.log("Roman String " + romanString)
+  numberToConvert -= highestSymbol[0]
+  console.log("Number To Convert " + numberToConvert)
+}
+
+return romanString
+  //let highestSymbol = findHighestRomanSymbol(decimalNumber);
+  //console.log(highestSymbol)
+}
+
+convertToRoman(3999);
