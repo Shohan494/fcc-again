@@ -1,0 +1,18 @@
+function pairwise(arr, arg) {
+  let pairIndices = [];
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] == arg
+          && !pairIndices.includes(i)
+          && !pairIndices.includes(j)) {
+        pairIndices.push(i, j);
+        sum += i + j;
+        break;
+      }
+    }
+  }
+  return sum;
+}
+
+pairwise([0, 0, 0, 0, 1, 1], 1)
